@@ -2,9 +2,12 @@
 
 describe("Search", () => {
   context("iPhone 6 resolution", () => {
-    beforeEach("visit UKTV website using iPhone 6 and dismiss cookie notice", () => {
+    beforeEach("visit UKTV website using iPhone 6", () => {
+      // resolution and baseUrl specified in cypress.json
       cy.visit("/");
+      // search query specified in fixtures/uktvsearch.json
       cy.fixture("uktvsearch").as("search");
+      // dismisses cookie notice
       cy.get('.btn-container > .accept').click();
     });
 

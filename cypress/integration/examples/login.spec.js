@@ -10,7 +10,11 @@ describe("Login", () => {
     });
 
     it("displays mobile menu when clicked", () => {
+      // dismisses cookie notice
+      cy.get('.btn-container > .accept').click();
+      // checks web elements are not present
       cy.get("navigation-bar transparent").should("not.be.visible");
+      // checks mobile elements are present
       cy.get(".menu-btn")
         .should("be.visible")
         .click();
